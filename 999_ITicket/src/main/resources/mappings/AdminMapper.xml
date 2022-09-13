@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="Admin">
+	<!-- 회원리스트 -->
+	<select id="getuserlist" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+	SELECT *
+	FROM users
+	WHERE user_id LIKE '%' || #{userlistKeyword} || '%'
+	ORDER BY user_id DESC
+	
+	<!-- <update id="updateuser" p></update> -->
+	
+	</select>
+	<!-- 상품 업데이트-->
+	<update id="updateproduct" parameterType="com.iticket.app.vo.DetailVO">
+	UPDATE GENRE_DETAIL
+	SET gd_num = #{gd_num},
+	gd_actor = #{gd_actor},
+	gd_startTime = #{gd_startTime},
+	gd_endTime = #{gd_endTime},
+	gd_title = #{gd_title},
+	gd_location = #{gd_location},
+	gd_age = #{gd_age},
+	gd_term = #{gd_term},
+	gd_plan = #{gd_plan},
+	gd_runningtime = #{gd_runningtime},
+	gd_servicenumber = #{gd_servicenumber},
+	gd_price = #{gd_price},
+	hl_buildingnum = #{hl_buildingnum},
+	gr_num = #{gr_num}
+	WHERE gd_num = #{gd_num}
+  	</update>
+	
+	<!-- 상품추가 -->
+	<insert id="getinsert" parameterType="com.iticket.app.vo.DetailVO">
+		insert into genre_detail(gd_num, gd_actor, gd_startTime, gd_endTime, gd_title,gd_location, gd_age, gd_term, gd_plan, gd_runningtime, gd_servicenumber, gd_price, hl_buildingnum, gr_num, poster)
+		values((SELECT NVL(MAX(gd_num),0)+1 FROM genre_detail),#{gd_actor},#{gd_startTime},#{gd_endTime},#{gd_title},#{gd_location},
+		        #{gd_age}, #{gd_term}, #{gd_plan}, #{gd_runningtime}, #{gd_servicenumber},#{gd_price}, #{hl_buildingnum},#{gr_num},#{poster})
+	</insert>
+	<!-- 하나의 삼품조회 -->
+		<select id="getBoard" parameterType="com.iticket.app.vo.DetailVO" resultType="com.iticket.app.vo.DetailVO">
+		SELECT * FROM genre_detail WHERE gd_num = #{gd_num}
+	</select>
+	<!-- 리스트조회 -->
+	<select id="getDetailList" parameterType="com.iticket.app.vo.DetailVO" resultType="com.iticket.app.vo.DetailVO">
+	SELECT * 
+	FROM genre_detail
+	WHERE  gd_title LIKE '%'|| #{searchKeyword} ||'%'<!-- searchKeyword내가 넣는단어 -->
+	ORDER BY gd_title DESC
+	</select>
+	
+	<!-- 상품삭제 -->
+	<!-- 상품삭제 -->
+	<delete id="deleteDetail" parameterType="com.iticket.app.vo.DetailVO">
+	DELETE  FROM  GENRE_DETAIL 
+	WHERE gd_num LIKE '%'|| #{gd_num} ||'%'
+	</delete>
+</mapper>

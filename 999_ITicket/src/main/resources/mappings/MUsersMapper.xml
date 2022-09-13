@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mappings.MUsersMapper">
+	<resultMap type="com.iticket.app.sec.CustomUserDetail"
+		id="userDetail">
+		<id property="user_id" column="user_id" />
+		<result property="user_pw" column="user_pw" />
+		<result property="enabled" column="enabled" />
+		<collection property="authoList"
+			ofType="com.iticket.app.vo.AuthVO">
+			<result property="authority" column="authority" />
+			<result property="user_id" column="user_id" />
+		</collection>
+	</resultMap>
+	<select id="getAuths" parameterType="string"
+		resultMap="userDetail">
+		select * from users u, authorities a
+		where
+		u.user_id=a.user_id and u.user_id= #{user_id}
+	</select>
+
+	<insert id="muser_add"
+		parameterType="com.iticket.app.vo.UsersVO">
+		insert into users
+		values(#{user_id},#{user_pw},#{user_name},#{email},#{phone},sysdate,1,null)
+	</insert>
+	<insert id="auth_add" parameterType="com.iticket.app.vo.AuthVO">
+		insert into authorities
+		values(#{authority},#{user_id})
+	</insert>
+	<select id="isMember" parameterType="hashmap"
+		resultType="com.iticket.app.vo.UsersVO">
+		select * from users where user_id=#{user_id} and
+		user_pw=#{user_pw}
+	</select>
+	<select id="check" parameterType="string"
+		resultType="com.iticket.app.vo.UsersVO">
+		select * from users
+		where user_id = #{user_id}
+	</select>
+	<!-- 네이버전용 회원가입 -->
+	<insert id="insertN">
+		INSERT ALL
+		INTO users(USER_ID, USER_PW, USER_NAME, EMAIL, PHONE,REGDATE,naverLogin)
+		values(#{user_id}, #{user_pw}, #{user_name},#{email} #{phone},sysdate, #{naverLogin})
+		INTO AUTHORITIES(AUTHORITY, USER_ID) values('ROLE_MEMBER', #{user_id})
+		SELECT * FROM DUAL
+	</insert>
+
+	<!-- 네이버 연동 여부 -->
+	<select id="naverChk" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+		select user_id, email, user_name, naverLogin 
+		from users 
+		where naverLogin = #{naverLogin} OR email = #{email}
+	</select>
+
+	<!-- 네이버연동 회원으로 정보 수정 -->
+	<update id="updateN">
+		update users set naverLogin = #{naverLogin} where email=#{email}
+	</update>
+	<select id="idFindPhone" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+		SELECT * FROM USERS WHERE USER_NAME = #{user_name} or PHONE = #{phone}
+	</select>
+	<select id="idFindEmail" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+		SELECT * FROM USERS WHERE USER_NAME = #{user_name} or EMAIL = #{email}
+	</select>
+	<select id="pwFindPhone" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+		SELECT * FROM USERS WHERE USER_ID = #{user_id} or USER_NAME = #{user_name} or PHONE = #{phone}
+	</select>
+	<select id="pwFindEmail" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+		SELECT * FROM USERS WHERE USER_ID = #{user_id} or USER_NAME = #{user_name} or EMAIL = #{email}
+	</select>
+	<update id="updatepw" parameterType="com.iticket.app.vo.UsersVO">
+		UPDATE USERS SET USER_PW = #{user_pw} WHERE USER_ID = #{user_id}
+	</update>
+	
+	<select id="selectOne" parameterType="com.iticket.app.vo.UsersVO" resultType="com.iticket.app.vo.UsersVO">
+		SELECT * FROM USERS WHERE USER_ID = #{user_id}
+	</select>
+
+</mapper>

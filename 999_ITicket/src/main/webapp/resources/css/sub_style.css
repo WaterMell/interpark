@@ -1,0 +1,384 @@
+@charset "utf-8";
+
+
+
+
+.musical_con1 {
+    width: 100%;
+    height: 350px;
+}
+
+.content1_wrap {
+    width: 1000px;
+    height: 340px;
+    margin: -172px auto 0 auto;
+    background: url(../sub_images/bg_musical.jpg) no-repeat center top/cover;
+}
+
+.content1_wrap dl {
+    width: 124px;
+    height: 290px;
+    float: left;
+    margin: 49px 23px 0 0;
+}
+
+.content1_wrap dl:first-child {
+    margin-left: 68px;
+}
+
+.content1_wrap dl dt {
+    margin-bottom: 15px;
+}
+
+.content1_wrap dl dd {
+    width: 124px;
+    height: 50px;
+}
+
+.con1_txt1 {
+    font-size: 12px;
+    text-align: center;
+    display: block;
+    color: #d9d9d9;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+.con1_txt2 {
+    font-size: 11px;
+    color: #777;
+    display: block;
+    text-align: center;
+    margin-bottom: 1px;
+    word-spacing: -4px;
+}
+
+.con1_txt3 {
+    font-size: 10px;
+    color: #777;
+    display: block;
+    text-align: center;
+}
+
+.content1_wrap dl dt a img {
+    width: 128px;
+    height: 156px;
+}
+
+.musical_con2 {
+    width: 100%;
+    height: 317px;
+}
+
+.content2_wrap {
+    width: 1000px;
+    height: 302px;
+    margin: 0 auto;
+}
+
+.content2_wrap > div {
+    float: left;
+}
+
+.category {
+    width: 178px;
+    height: 300px;
+    border: 5px solid #d9d9d9;
+    box-sizing: border-box;
+}
+
+.category dl dt {
+    font-weight: bold;
+    width: 178px;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 15px;
+    margin-bottom: 10px;
+}
+
+.category dl dt::after {
+    content: "";
+    display: block;
+    width: 140px;
+    border-bottom: 1px solid #bcbcbc;
+    margin-left: 15px;
+}
+
+.category dl dd {
+    font-size: 13px;
+    text-indent: 15px;
+    margin: 5px 0;
+    word-spacing: -5px;
+}
+
+.category dl dd a {
+    color: #222;
+    font-weight: bold;
+}
+
+.category dl dd a:hover {
+    opacity: 0.5;
+}
+
+.category > p {
+    float: right;
+    margin: 35px 15px 0 0;
+}
+
+.category > p a:hover {
+    opacity: 0.5;
+}
+
+.con2_center {
+    width: 510px;
+    height: 300px;
+    margin-left: 27px;
+}
+
+.sc_big > * {
+    float: left;
+}
+
+.sc_big ul {
+    width: 137px;
+    height: 150px;
+}
+
+.sc_big ul li {
+    width: 137px;
+    height: 24.83px;
+    line-height: 24.83px;
+    text-indent: 10px;
+    font-size: 12px;
+    border-bottom: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+    box-sizing: border-box;
+    background: #f6f6f6;
+}
+
+.sc_big ul li:first-child {
+    border-top: 1px solid #d9d9d9
+}
+
+.sc_big ul li a {
+    color: #666;
+    display: block;
+}
+
+.sc_big ul li a:hover {
+    background: red;
+    color: #fff;
+    font-weight: bold;
+}
+
+.hot_mus {
+    width: 510px;
+}
+
+.hot_mus > * {
+    float: left;
+}
+
+.hot_mus dt {
+    margin-top: 10px;
+}
+
+.hot_mus dd {
+    margin-right: 12px;
+}
+
+.hot_mus dd a:not(.emp) {
+    font-size: 13px;
+    color: #333;
+}
+
+.hot_mus dd a:hover {
+    text-decoration: underline;
+}
+
+.emp {
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.ticket {
+    margin-top: 220px;
+}
+
+.btn_more {
+    position: absolute;
+    left: 50;
+    margin-left: -50px;
+}
+
+.ticket dd {
+    margin: 2px 0 0 10px;
+}
+
+.ticket dd a {
+    font-size: 13px;
+    color: #333;
+}
+
+.ticket dd a:hover {
+    text-decoration: underline;
+    color: red;
+}
+
+.con2_ranking {
+    width: 250px;
+    height: 300px;
+}
+
+.ifr_ranking {
+    width: 250px;
+    height: 155px;
+    margin-left: 33px;
+    border: 5px solid #d9d9d9;
+    box-sizing: border-box;
+}
+
+.ifr_ranking dl {
+    border-bottom: 1px solid #d9d9d9;
+    height: 35px;
+    line-height: 35px;
+    text-indent: 10px;
+}
+
+.ifr_ranking dl dt {
+    float: left;
+    font-weight: bold;
+}
+
+.ifr_ranking dl ul > * {
+    float: left;
+}
+
+.ifr_ranking dl ul li:first-child button {
+    border-bottom: 2px solid #333;
+}
+
+.ifr_ranking ol {
+    text-indent: 10px;
+    margin-top: 10px;
+}
+
+.rank_lic {
+    display: none;
+}
+
+.rank_creat {
+    display: none;
+}
+
+.ifr_ranking ol li {
+    margin-bottom: 3px;
+}
+
+.ifr_ranking ol li a {
+    display: block;
+    font-size: 13px;
+    color: #000;
+}
+
+.ifr_ranking ol li a:hover {
+    color: red;
+}
+
+.aside_banner {
+    margin-left: 33px;
+}
+
+.musical_banner {
+    width: 100%;
+    height: 200px;
+}
+
+.banner_wrap {
+    width: 1000px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.banner_wrap ul li {
+    float: left;
+    margin: 0 15px 5px 0;
+}
+
+.banner_wrap ul li:first-child {
+    margin-left: 7px;
+}
+
+.banner_wrap ul li:nth-of-type(4) {
+    margin-left: 7px;
+}
+
+.musical_issue {
+    width: 100%;
+    height: 500px;
+}
+
+.issue_wrap {
+    width: 1000px;
+    height: 500px;
+    margin: 0 auto;
+    border: 1px solid #d9d9d9;
+    border-top: 2px solid #666;
+}
+
+.issue_title {
+    margin-left: 15px;
+}
+
+.issue_list {
+    margin: 20px 0 0 30px;
+}
+
+.issue_list > * {
+    float: left;
+}
+
+.issue_list li {
+    width: 115px;
+    height: 188px;
+    margin: 20px 5px 0 0;
+}
+
+.issue_list li a img {
+    width: 95px;
+    height: 116px;
+}
+
+.issue_txt1 {
+    font-size: 12px;
+    height: 14px;
+    display: block;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    padding-right: 18px;
+    word-spacing: -4px;
+    margin-bottom: 3px;
+}
+
+.issue_txt2 {
+    font-size: 11px;
+    height: 14px;
+    display: block;
+    padding-right: 18px;
+    text-align: center;
+    overflow: hidden;
+    color: #a9a9a9;
+    margin-bottom: 3px;
+}
+
+.issue_txt3 {
+    font-size: 11px;
+    height: 14px;
+    display: block;
+    text-align: center;
+    padding-right: 18px;
+    color: #555;
+}

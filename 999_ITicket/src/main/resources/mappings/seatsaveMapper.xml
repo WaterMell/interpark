@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="seatsaveDAO">
+
+	<select id="get_seatsave_list" parameterType="com.iticket.app.vo.SeatSaveVO" resultType="com.iticket.app.vo.SeatSaveVO">
+		select * from SEATSAVE
+		where SD_NUM =#{sd_num}
+	</select>
+	
+	<select id="get_seatsave" parameterType="com.iticket.app.vo.SeatSaveVO" resultType="com.iticket.app.vo.SeatSaveVO">
+		select SEAT_ABLE from SEATSAVE
+		where ST_NUM = #{st_num}
+		and SD_NUM = #{sd_num}
+	</select>
+	
+
+ 	<insert id="seatsave_insert" parameterType="com.iticket.app.vo.SeatSaveVO">
+		INSERT INTO SEATSAVE (SS_NUM, SEAT_ABLE,ST_NUM ,SD_NUM)
+		VALUES ((SELECT NVL(MAX(SS_NUM),0) + 1 FROM SEATSAVE),#{seat_able},#{st_num},#{sd_num})
+	</insert>
+	
+	<delete id="seatsave_delete" parameterType="com.iticket.app.vo.SeatSaveVO">
+		DELETE FROM SEATSAVE WHERE st_num = #{st_num} AND sd_num = #{sd_num}
+	</delete>
+
+
+</mapper>

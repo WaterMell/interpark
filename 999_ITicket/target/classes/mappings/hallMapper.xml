@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="hallDAO">
+
+	<select id="get_hall_List" parameterType="com.iticket.app.vo.HallVO" resultType="com.iticket.app.vo.HallVO">
+		select * from hall
+	</select>
+	
+	<select id="get_hall" parameterType="com.iticket.app.vo.HallVO" resultType="com.iticket.app.vo.HallVO">
+		select * from HALL
+		where HL_BUILDINGNUM = #{HL_BUILDINGNUM}
+	</select>
+	
+
+	<insert id="insert_hall" parameterType="com.iticket.app.vo.HallVO">
+		INSERT INTO HALL (HL_BUILDINGNUM, HL_TOTSEAT)
+		VALUES (#{HL_BUILDINGNUM},#{HL_TOTSEAT})
+		
+	</insert>
+	
+	<update id="update_hall" parameterType="com.iticket.app.vo.HallVO">
+		UPDATE HALL SET HL_TOTSEAT = #{HL_TOTSEAT} WHERE HL_BUILDINGNUM = #{HL_BUILDINGNUM}
+	</update>
+	
+	<delete id="delete_hall" parameterType="com.iticket.app.vo.HallVO">
+		DELETE FROM HALL WHERE HL_BUILDINGNUM = #{HL_BUILDINGNUM}
+	</delete>
+
+</mapper>

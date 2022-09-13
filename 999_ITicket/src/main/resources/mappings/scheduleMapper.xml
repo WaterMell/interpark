@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="scheduleDAO">
+	<select id="get_schedule_list" parameterType="com.iticket.app.vo.ScheduleVO" resultType="com.iticket.app.vo.ScheduleVO">
+		select * from schedule 
+		where gd_num = #{gd_num}
+		order by sd_num  
+	</select>
+	
+	<select id="get_schedule" parameterType="com.iticket.app.vo.ScheduleVO" resultType="com.iticket.app.vo.ScheduleVO">
+		select * from schedule 
+		where sd_num = #{sd_num}
+		order by sd_num  
+	</select>
+	
+<!-- 	<select id="get_sd_num" parameterType="com.iticket.app.vo.ScheduleVO" resultType="com.iticket.app.vo.ScheduleVO">
+		select sd_num from schedule 
+		where sd_num = #{sd_num}
+		order by sd_num  
+	</select> -->
+</mapper>

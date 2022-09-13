@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="info">
+	<update id="userUpdate" parameterType="com.iticket.app.vo.UsersVO">
+		UPDATE USERS SET
+		 USER_NAME=#{user_name},PHONE=#{phone},EMAIL=#{email} 
+		 WHERE USER_ID=#{user_id} 
+	</update>
+	
+	<update id="userPwupdate" parameterType="com.iticket.app.vo.UsersVO">
+		UPDATE USERS SET
+		 USER_PW=#{user_pw} 
+		 WHERE USER_ID=#{user_id} 
+	</update>
+	
+	<!-- <select id="log">
+		SELECT * FROM 
+	</select> -->
+	
+	<update id="userDrop" parameterType="com.iticket.app.vo.UsersVO">
+		UPDATE USERS SET
+		 ENABLED = '2'
+		 WHERE USER_ID=#{user_id} 
+	</update>
+	
+</mapper>

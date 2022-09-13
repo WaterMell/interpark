@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="mypage" >
+  	<select id="Tickeketing" parameterType="com.iticket.app.vo.ForReservationVO" resultType="com.iticket.app.vo.ForReservationVO">
+  	select rv_date,rv_num,gd_title,sd_date
+  	from reservation u, seat s, GENRE_DETAIL g,SCHEDULE h
+  	where u.st_num = s.st_num
+    and g.gd_num =h.gd_num
+    and s.hl_buildingnum= g.hl_buildingnum
+    and user_id =#{user_id}
+  	</select>
+  	
+  	<select id="reviewList" parameterType="com.iticket.app.vo.ReviewVO" resultType="com.iticket.app.vo.ReviewVO">
+ 	 select gd_title,rv_regdate,rv_cnt,rv_content
+  	from  review 
+  	where user_id = #{user_id}<!-- jsp에서 요청한값 -->
+  	</select>
+</mapper>

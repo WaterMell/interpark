@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reservDAO">
+
+	<select id="get_reserv_List" parameterType="com.iticket.app.vo.ReservationVO" resultType="com.iticket.app.vo.ReservationVO">
+		select * from reservation
+	</select>
+	
+	<select id="get_reserv_List_id" parameterType="com.iticket.app.vo.ReservationVO" resultType="com.iticket.app.vo.ReservationVO">
+		select * from reservation where user_id = #{user_id}
+	</select>
+	
+	<select id="get_reserv" parameterType="com.iticket.app.vo.ReservationVO" resultType="com.iticket.app.vo.ReservationVO">
+		select * from reservation
+		where rv_num = #{rv_num}
+	</select>
+	
+	<select id="get_reserv_history" parameterType="com.iticket.app.vo.ForReservationVO" resultType="com.iticket.app.vo.ForReservationVO">
+		SELECT TO_CHAR(SCH.sd_date, 'YYYY-MM-DD') sd_date, SCH.start_time, g.gd_title, r.rv_num, s.st_price, r.st_num, r.rv_date
+		FROM RESERVATION R, schedule SCH, GENRE_DETAIL G, seat s
+		WHERE R.user_id = #{user_id}
+		AND R.st_num = s.st_num
+		AND r.sd_num = sch.sd_num
+		AND sch.gd_num = g.gd_num
+	</select>
+	
+	<select id="get_one_reserv_history" parameterType="com.iticket.app.vo.ForReservationVO" resultType="com.iticket.app.vo.ForReservationVO">
+		SELECT TO_CHAR(SCH.sd_date, 'YYYY-MM-DD') sd_date, SCH.start_time, g.gd_title, r.rv_num, s.st_price, r.st_num, r.rv_date,SCH.sd_num
+		FROM RESERVATION R, schedule SCH, GENRE_DETAIL G, seat s
+		WHERE R.rv_num = #{rv_num}
+		AND R.st_num = s.st_num
+		AND r.sd_num = sch.sd_num
+		AND sch.gd_num = g.gd_num
+	</select>
+	
+
+ 	<insert id="insert_reserv" parameterType="com.iticket.app.vo.ReservationVO">
+		INSERT INTO RESERVATION (RV_NUM,ST_NUM ,USER_ID,SD_NUM,RV_DATE)
+		VALUES ((SELECT NVL(MAX(RV_NUM),0) + 1 FROM RESERVATION),#{st_num},#{user_id},#{sd_num},to_char(sysdate,'yyyy.mm.dd hh24:mi'))
+	</insert>
+	
+	<delete id="delete_reserv" parameterType="com.iticket.app.vo.ReservationVO">
+		DELETE FROM RESERVATION WHERE RV_NUM = #{rv_num}
+	</delete>
+	
+	
+</mapper>

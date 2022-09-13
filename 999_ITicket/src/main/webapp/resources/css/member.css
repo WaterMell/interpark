@@ -1,0 +1,217 @@
+@charset "UTF-8"; /* 기본 설정: 페이지 전체 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.material-symbols-outlined { /* 메뉴아이콘 */
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+header {
+	background-color: #dbdbdb;
+}
+
+.header_container {
+	display: flex;
+	align-items: center;
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.logo_container {
+	display: block;
+	margin: 5px 10px;
+}
+
+.logo_container a {
+	font-size: 30px;
+	font-weight: 500;
+	text-decoration: none;
+	text-align: center;
+	color: rgba(0, 0, 0, 1);
+}
+
+.nav_container {
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu_container {
+	align-content: flex-start;
+	margin-left: 50px;
+}
+
+.menu_container .menu, .login {
+	list-style: none;
+	display: flex;
+	cursor: pointer;
+}
+
+.menu_title {
+	display: block;
+	margin: 10px;
+	font-size: 20px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 1);
+}
+
+.menu_index {
+	display: block;
+	margin: 10px 0;
+	padding: 0 15px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 1);
+}
+
+.menu_1, .menu_2, .menu_3 {
+	display: block;
+	cursor: pointer;
+}
+
+.menu_1_content, .menu_2_content, .menu_3_content {
+	display: none;
+	list-style: none;
+	font-size: 15px;
+	position: absolute;
+	z-index: 10;
+	border-radius: 5px;
+	background-color: rgba(235, 223, 200, 1);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+.login_container {
+	align-content: flex-end;
+	margin-right: 10px;
+}
+
+.footer_container {
+	padding-top: 35px;
+	padding-bottom: 35px;
+	display: block;
+	cursor: default;
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(25, 25, 25, 1);
+}
+
+.footer_container .footA {
+	font-size: 25px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.footer_container .footB {
+	font-size: 15px;
+}
+/* 회색 바끝나는 곳 */
+.total_search {
+	width: 500px;
+	height: 50px;
+	font-size: 15px;
+	padding-bottom: 0px;
+	border-radius: 4px;
+	border-style: solid;
+}
+
+.bar {
+	align-items: center;
+	padding: 0.5rem;
+	display: flex;
+	background-color: white;
+	border-bottom: 1px solid #dbdbdb;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.search_btn {
+	font-size: 20px;
+	height: 40px;
+	width: 100px;
+	border-radius: 4px;
+	padding:
+}
+/* 티켓 인터파크 검색 끝나는곳 */
+
+/* 장르바 부수적 */
+
+
+.navbar-brand {
+	margin-left: 600px;
+}
+
+.nav-item1 {
+	margin-left: 50px;
+	background-position: -41px
+}
+
+.nav-item2 {
+	margin-left: 50px;
+	background-position: -109px 0;
+}
+
+.nav-item3 {
+	margin-left: 50px;
+}
+
+.nav-item4 {
+	margin-left: 50px;
+}
+
+.nav-item5 {
+	margin-left: 50px;
+}
+
+.dropdown {
+	margin-left: 50px;
+}
+
+.container-fluid {
+	background-color: black;
+}
+
+.dropdown-menu {
+	padding: 230px;
+}
+
+.musical {
+	padding-left: 90px;
+}
+
+.consert1 {
+	padding-left: 90px;
+}
+
+.theater {
+		padding-left: 90px;
+}
+
+.di1 {
+float:left;
+	
+}
+.
+.di2 {
+float: right;
+text-align: center;
+
+	
+}
+.left {
+	margin-left: 30px;
+}
+
+.dropdown-menu {
+	top: 38px;
+	padding: 3px 3px 5px 4px;
+	height: 391px;
+	width: 400px;
+	height: 495px;
+	box-sizing: border-box;
+	background:
+		url(//ticketimage.interpark.com/TicketImage/uidev/desktop/images/common/gnb/bg_gnb.png)
+		0 0 no-repeat;
+}

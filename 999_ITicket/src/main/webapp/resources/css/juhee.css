@@ -1,0 +1,366 @@
+@charset "UTF-8";
+body * {
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, "맑은 고딕",
+		"Malgun Gothic", "돋움", Dotum, Helvetica, "Apple SD Gothic Neo",
+		sans-serif;
+}
+
+@charset "UTF-8"; /* 기본 설정: 페이지 전체 */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.material-symbols-outlined { /* 메뉴아이콘 */
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+}
+
+header {
+	background-color: #dbdbdb;
+}
+
+.header_container {
+	display: flex;
+	align-items: center;
+	max-width: 1500px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 25px;
+}
+
+.logo_container {
+	display: block;
+	margin: 5px 10px;
+}
+
+.logo_container a {
+	font-size: 30px;
+	font-weight: 500;
+	text-decoration: none;
+	text-align: center;
+	color: rgba(0, 0, 0, 1);
+}
+
+.nav_container {
+	display: flex;
+	flex: 1;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.menu_container {
+	align-content: flex-start;
+	margin-left: 50px;
+}
+
+.menu_container .menu, .login {
+	list-style: none;
+	display: flex;
+	cursor: pointer;
+}
+
+.menu_title {
+	display: block;
+	margin: 10px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 1);
+}
+
+.menu_index {
+	display: block;
+	margin: 10px 0;
+	padding: 0 15px;
+	text-decoration: none;
+	color: rgba(0, 0, 0, 1);
+}
+
+.menu_1, .menu_2, .menu_3 {
+	display: block;
+	cursor: pointer;
+}
+
+.menu_1_content, .menu_2_content, .menu_3_content {
+	display: none;
+	list-style: none;
+	font-size: 15px;
+	position: absolute;
+	z-index: 10;
+	border-radius: 5px;
+	background-color: rgba(235, 223, 200, 1);
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+}
+
+.login_container {
+	align-content: flex-end;
+	margin-right: 10px;
+}
+
+.footer_container {
+	padding-top: 35px;
+	padding-bottom: 35px;
+	display: block;
+	cursor: default;
+	text-align: center;
+	color: rgba(255, 255, 255, 1);
+	background-color: rgba(25, 25, 25, 1);
+}
+
+.footer_container .footA {
+	font-size: 25px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.footer_container .footB {
+	font-size: 15px;
+}
+/* 회색 바끝나는 곳 */
+.total_search {
+	width: 500px;
+	height: 50px;
+	font-size: 15px;
+	padding-bottom: 0px;
+	border-radius: 4px;
+	border-style: solid;
+}
+
+.bar {
+	align-items: center;
+	padding: 0.5rem;
+	display: flex;
+	background-color: white;
+	border-bottom: 1px solid #dbdbdb;
+	font-size: 16px;
+	font-style: italic;
+}
+
+.search_btn {
+	font-size: 20px;
+	height: 40px;
+	width: 100px;
+	border-radius: 4px;
+	padding:
+}
+/* 티켓 인터파크 검색 끝나는곳 */
+
+/* 장르바 부수적 */
+.navbar-brand {
+	margin-left: 600px;
+}
+
+.nav-item1 {
+	margin-left: 50px;
+	background-position: -41px
+}
+
+.nav-item2 {
+	margin-left: 50px;
+	background-position: -109px 0;
+}
+
+.nav-item3 {
+	margin-left: 50px;
+}
+
+.nav-item4 {
+	margin-left: 50px;
+}
+
+.nav-item5 {
+	margin-left: 50px;
+}
+
+.dropdown {
+	margin-left: 50px;
+}
+
+.container-fluid {
+	background-color: black;
+}
+
+.dropdown-menu {
+	padding: 230px;
+}
+
+.musical {
+	padding-left: 90px;
+}
+
+.consert1 {
+	padding-left: 90px;
+}
+
+.theater {
+	padding-left: 90px;
+}
+
+.di1 {
+	float: left;
+}
+
+.
+.di2 {
+	float: right;
+	text-align: center;
+}
+
+.left {
+	margin-left: 30px;
+}
+
+.dropdown-menu {
+	top: 38px;
+	padding: 3px 3px 5px 4px;
+	height: 391px;
+	width: 400px;
+	height: 495px;
+	box-sizing: border-box;
+	background:
+		url(//ticketimage.interpark.com/TicketImage/uidev/desktop/images/common/gnb/bg_gnb.png)
+		0 0 no-repeat;
+}
+/* .navbar-nav{
+margin-left: 200px;
+} */
+
+/* 나의페이지시작 */
+#myinfoWrap {
+	width: 180px;
+	position: relative;
+	z-index: 1;
+	margin: 0 0 15px 0;
+}
+
+.mypage .level {
+	text-align: center !important;
+	padding-top: 7px;
+	margin: 0 5px;
+	clear: both;
+	width: 170px;
+	word-break: break-all;
+}
+
+.level {
+	text-align: center !important;
+	padding-top: 7px;
+	margin: 0 5px;
+	clear: both;
+	width: 170px;
+	word-break: break-all;
+	argin: 10px;
+	margin: 10px;
+}
+
+.bg_bottom {
+	height: 13px;
+	background:
+		url(http://openimage.interpark.com/_mypage_n/bg/bg_mypage_bottom.gif)
+		no-repeat 0 0;
+}
+
+.lnbWrap {
+	clear: both;
+	margin-top: 12px;
+	overflow: hidden;
+	margin-left: 10px;
+}
+
+.my {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+.mypage .possess {
+	background:
+		url(http://openimage.interpark.com/_mypage_n/bg/bg_mypage_area.gif)
+		no-repeat;
+	width: 300px;
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.lnbWrap .top {
+	height: 2px;
+	font-size: 0;
+	background:
+		url(//ticketimage.interpark.com/TicketImage/event/100913_my/bg_lnbWrap_top.gif)
+		no-repeat left top;
+}
+
+.lnbWrap div {
+	padding: 15px 0 5px 10px;
+	border-bottom: 1px solid #f6f6f6;
+}
+
+body, h1, h2, h3, h4, h5, h6, form, div, em, img, ul, li, ol, fieldset,
+	label, dt, p {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	font-size: 12px;
+	color: #33333b;
+}
+
+.bdn {
+	border: none !important;
+	margin-bottom: 30px;
+}
+
+#myinfoWrap {
+	margin-left: 10px;
+}
+
+.mypage {
+	background:
+		url(http://openimage.interpark.com/_mypage_n/bg/bg_mypage.gif)
+		no-repeat;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.totalmy {
+	float: left;
+}
+
+tit {
+	float: right;
+}
+
+.totalmy {
+	display: inline-flex;
+}
+
+.no {
+	margin-left: 300px;
+}
+
+.etc {
+	margin-left: 8px;
+}
+
+.lnbWrap div {
+	padding: 15px 0 5px 10px;
+	border-bottom: 1px solid #f6f6f6;
+}
+
+.dpGnb {
+	height: 30px;
+	margin: 0 auto;
+	position: relative;
+	text-align: left;
+	width: 960px;
+}
+
+.box {
+	width: 723px;
+	height: 22px;
+}
+
+.timeSelect .box .title {
+	background:
+		url(//ticketimage.interpark.com/TicketImage/event/100913_my/bg_linedot.gif)
+		no-repeat 87px top;
+	width: 105px;
+	float: left;
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+   		<property name="driverClassName" value="oracle.jdbc.OracleDriver"/>
+   		<property name="url" value="jdbc:oracle:thin:@192.168.11.25:1521:xe"/>
+   		<property name="username" value="INTERPARK"/>
+   		<property name="password" value="INTERPARK"/>
+   </bean>
+   <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+   		<property name="dataSource" ref="dataSource"/>
+   		<property name="mapperLocations" value="classpath:mappings/**/*Mapper.xml"></property>
+   </bean>
+   <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+   		<constructor-arg index="0" ref="sqlSessionFactory"/>
+   </bean>
+   <context:component-scan base-package="com.iticket.app">
+   		<context:exclude-filter type="annotation" 
+   		expression="org.springframework.stereotype.Controller"/>
+   </context:component-scan>
+</beans>
